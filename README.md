@@ -25,6 +25,7 @@ Things you may want to cover:
 * ...
 
 # DB設計
+
 ## usersテーブル
 |Column|Type|Options|
 |------|----|-------|
@@ -32,10 +33,30 @@ Things you may want to cover:
 |mail|string|null: false, unique: true|
 |password|string|null: false, unique: true|
 
+### Association
+- has_many :posts
+- has_many :groups, through: :users_groups
+
 ## groupsテーブル
 |Column|Type|Options|
 |------|----|-------|
 |group_name|string|null: false, unique: true|
+
+### Association
+- has_many :posts
+- has_many :users, through: :users_groups
+
+## users_groupsテーブル（中間テーブル users-groups）
+|Column|Type|Options|
+|------|----|-------|
+|text|text|-------|
+|image|string|-------|
+|user_id|int|foreign_key: true|
+|group_id|int|foreign_key: true|
+
+### Association
+- belong_to :user
+- belong_to :group
 
 ## postsテーブル
 |Column|Type|Options|
@@ -45,11 +66,8 @@ Things you may want to cover:
 |user_id|int|foreign_key: true|
 |group_id|int|foreign_key: true|
 
-## users_groupsテーブル（中間テーブル users-groups）
-|Column|Type|Options|
-|------|----|-------|
-|text|text|-------|
-|image|string|-------|
-|user_id|int|foreign_key: true|
-|group_id|int|foreign_key: true|
+### Association
+- belongs_to :user
+- belongs_to :group
+
 
