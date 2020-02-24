@@ -24,20 +24,20 @@ Things you may want to cover:
 
 * ...
 
-#DB設計
-##usersテーブル
+# DB設計
+## usersテーブル
 |Column|Type|Options|
 |------|----|-------|
 |name|string|-------|
 |mail|string|-------|
 |password|string|-------|
 
-##groupsテーブル
+## groupsテーブル
 |Column|Type|Options|
 |------|----|-------|
 |group_name|string|-------|
 
-##postsテーブル
+## postsテーブル
 |Column|Type|Options|
 |------|----|-------|
 |text|text|-------|
@@ -45,7 +45,7 @@ Things you may want to cover:
 |user_id|int|-------|
 |group_id|int|-------|
 
-##users_groupsテーブル（中間テーブル users-groups）
+## users_groupsテーブル（中間テーブル users-groups）
 |Column|Type|Options|
 |------|----|-------|
 |text|text|-------|
