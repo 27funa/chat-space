@@ -35,22 +35,22 @@ Things you may want to cover:
 
 ### Association
 - has_many :posts
+- has_many :users_groups
 - has_many :groups, through: :users_groups
 
 ## groupsテーブル
 |Column|Type|Options|
 |------|----|-------|
-|group_name|string|null: false, unique: true|
+|name|string|null: false, unique: true|
 
 ### Association
 - has_many :posts
+- has_many :users_groups
 - has_many :users, through: :users_groups
 
 ## users_groupsテーブル（中間テーブル users-groups）
 |Column|Type|Options|
 |------|----|-------|
-|text|text|-------|
-|image|string|-------|
 |user_id|int|foreign_key: true|
 |group_id|int|foreign_key: true|
 
