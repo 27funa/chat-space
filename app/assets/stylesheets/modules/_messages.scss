@@ -1,0 +1,189 @@
+$white: #fff; 
+
+* {
+  box-sizing: border-box;
+}
+
+.wrapper {
+  display: flex;
+  justify-content: space-between;
+}
+
+.side-bar {
+  background-color: #253141;
+  width: 300px;
+  height: 100vh;
+  color: $white;
+  font-weight: bold;
+  &__user-name {
+    height: 100px;
+    display: flex;
+    align-items: center;
+    padding: 0px 20px 0px;
+    .top-items{
+      height: 20px;
+      width: 260px;
+      display: flex;
+      justify-content: space-between;
+      &__name{
+        font-size: 16px;
+        line-height: 20px;
+      }
+      &__icons{
+        width: 60px;
+        display: flex;
+        justify-content: flex-end;
+        .icon-btn{
+          font-size: 14px;
+          line-height: 20px;
+          margin-left: 5px;
+          i {
+            color: #fff;
+          }
+        }
+      }
+    }
+  }
+  &__group-list {
+    height: calc(100vh - 100px);
+    background-color: #2f3e51;
+    padding: 20px 20px 0px;
+    font-weight: normal;
+    .group-list {
+      margin-bottom: 40px;
+      &__name {
+        height: 23px;
+        font-size: 15px;
+        line-height: 23px;
+        margin-bottom: 5px;
+      }
+      &__text {
+        height: 17px;
+        font-size: 11px;
+        line-height: 17px;
+      }
+    }
+  }
+}
+
+.chat-main {
+  background-color: $white;
+  width: calc(100vw - 300px);
+  height: 100vh;
+  color: black;
+  &__group-list {
+    height: 100px;
+    background-color: $white;
+    border-bottom: #eee solid 1px;
+    display: flex;
+    justify-content: space-between;
+    padding: 0px 40px 0px;
+    .left-contents {
+      margin-top: 35px;
+      .chat-name{
+        color: #333;
+        height: 30px;
+        font-size: 20px;
+        line-height: 30px;
+        margin-bottom: 15px;
+      }
+      .chat-member{
+        color: #999;
+        height: 18px;
+        font-size: 12px;
+        line-height: 18px;
+        display: flex;
+        justify-content: flex-start;
+      }
+    }
+    a {
+      text-decoration: none;
+      .edit-btn{
+        height: 40px;
+        width: 72px;
+        text-align: center;
+        line-height: 40px;
+        margin-top: 30px;
+        border: solid 1px #38aef0;
+        color: #38aef0;
+        position: absolute;
+        right: 40px;
+      }
+    }
+  }
+  &__message-list {
+    height: calc(100vh - 100px - 90px);
+    background-color: #fafafa;
+    padding: 46px 40px;
+    .message {
+      padding-bottom: 40px;
+      &__upper-info {
+        display: flex;
+        margin-bottom: 10px;
+        &__talker {
+          font-size: 16px;
+          font-weight: bold;
+          color: #333;
+        }
+        &__date {
+          
+          font-size: 12px;
+          color: #999;
+          margin-left: 10px;
+        }
+      }
+      .message__text {
+        height: 21px;
+        font-size: 14px;
+        color: #434A54;
+        margin-bottom: 10px;
+      }
+    }
+  }
+  &__message-form {
+    height: 90px;
+    background-color: #ddd;
+    padding: 20px 40px;
+    .new-message {
+      display: flex;
+      .input-box {
+        width: 100%;
+        height: 50px;
+        background-color: $white;
+        display: flex;
+        justify-content: space-between;
+        position: relative;
+        &__text {
+          padding: 0px 40px 0px 10px;
+          width: 100%;
+          height: 100%;
+          border:solid 0px;
+        }
+        &__btn {
+          height: 30px;
+          position: absolute;
+          right: 10px;
+          top: 10px;
+          background-color: $white;
+          i {
+            font-size: 25px;
+            line-height: 30px;
+          }
+          .image-btn {
+            display: none;
+          }
+        }
+      }
+      .submit-btn {
+        display: none inline-block;
+        height: 50px;
+        width: 100px;
+        background-color: #38aef0;
+        border: solid 1px rgb(216, 216, 216) rgb(209, 209, 209) rgb(186, 186, 186);
+        color: $white;
+        margin-left: 15px;
+        padding: 0 30px;
+      }
+    }
+  }
+}
