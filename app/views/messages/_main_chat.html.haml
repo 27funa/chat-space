@@ -1,1 +1,30 @@
-<チャット画面>
+.chat-main
+  .chat-main__group-list
+    .left-contents
+      %h2.chat-name
+        talk
+      %ul.chat-member
+        Member：
+        %li.chat-member__li
+          funa
+    = link_to "#" do
+      .edit-btn
+        Edit
+  .chat-main__message-list
+    .message
+      .message__upper-info
+        %p.message__upper-info__talker
+          funa
+        %p.message__upper-info__date
+          2020/02/28(Fri) 21:40:25
+      %p.message__text
+        texttexttext
+
+  .chat-main__message-form
+    %form.new-message
+      .input-box
+        %input{type: "text", placeholder: "type a message", class: "input-box__text"}
+        %label{class: "input-box__btn"}
+          = icon('far', 'image')
+          %input{type: "file", class: "image-btn"}
+      %input{type: "submit",value: "Send", class: "submit-btn"}

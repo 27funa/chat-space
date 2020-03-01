@@ -1,1 +1,25 @@
-<サイドバー>
+.side-bar
+  .side-bar__user-name
+    .top-items
+      %p.top-items__name
+        funa
+      %ul.top-items__icons
+        %li.icon-btn
+          = link_to "#" do
+            = icon('far', 'edit')
+            %span<>
+        %li.icon-btn
+          = link_to "#" do
+            = icon('fas', 'cog')
+            %span<>
+  .side-bar__group-list
+    .group-list
+      %p.group-list__name
+        talk
+      %p.group-list__text
+        まだメッセージがありません
+    .group-list
+      %p.group-list__name
+        talk2
+      %p.group-list__text
+        まだメッセージがありません
