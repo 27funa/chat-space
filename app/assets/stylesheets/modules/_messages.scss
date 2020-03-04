@@ -51,16 +51,20 @@ $white: #fff;
     font-weight: normal;
     .group-list {
       margin-bottom: 40px;
-      &__name {
-        height: 23px;
-        font-size: 15px;
-        line-height: 23px;
-        margin-bottom: 5px;
-      }
-      &__text {
-        height: 17px;
-        font-size: 11px;
-        line-height: 17px;
+      a {
+        text-decoration: none;
+        color: $white;
+        &__name {
+          height: 23px;
+          font-size: 15px;
+          line-height: 23px;
+          margin-bottom: 5px;
+        }
+        &__text {
+          height: 17px;
+          font-size: 11px;
+          line-height: 17px;
+        }
       }
     }
   }
