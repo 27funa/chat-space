@@ -58,7 +58,7 @@ Things you may want to cover:
 - belong_to :user
 - belong_to :group
 
-## postsテーブル
+## postsテーブル（message）
 |Column|Type|Options|
 |------|----|-------|
 |text|text|-------|

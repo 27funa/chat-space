@@ -2,29 +2,24 @@
   .chat-main__group-list
     .left-contents
       %h2.chat-name
-        talk
+        = @group.name
       %ul.chat-member
         Member：
-        %li.chat-member__li
-          funa
-    = link_to "#" do
+        - @group.users.each do |user| 
+          %li.chat-member__li= user.name 
+    = link_to edit_group_path(@group) do
       .edit-btn
         Edit
   .chat-main__message-list
     .message
-      .message__upper-info
-        %p.message__upper-info__talker
-          funa
-        %p.message__upper-info__date
-          2020/02/28(Fri) 21:40:25
-      %p.message__text
-        texttexttext
+      = render @messages
 
   .chat-main__message-form
-    %form.new-message
-      .input-box
-        %input{type: "text", placeholder: "type a message", class: "input-box__text"}
-        %label{class: "input-box__btn"}
-          = icon('far', 'image')
-          %input{type: "file", class: "image-btn"}
-      %input{type: "submit",value: "Send", class: "submit-btn"}
+    .new-message
+      = form_for [@group, @message] do |f|
+        .input-box
+          = f.text_field :content, class: 'input-box__text', placeholder: 'type a message'
+          = f.label :image, class: 'input-box__btn' do
+            = icon('fas', 'image', class: 'icon')
+            = f.file_field :image, class: 'image-btn'
+        = f.submit 'Send', class: 'submit-btn'
