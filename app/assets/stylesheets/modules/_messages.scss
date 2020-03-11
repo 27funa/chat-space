@@ -4,6 +4,10 @@ $white: #fff;
   box-sizing: border-box;
 }
 
+*::-webkit-scrollbar {
+  display: none;
+}
+
 .wrapper {
   display: flex;
   justify-content: space-between;
@@ -54,13 +58,13 @@ $white: #fff;
       a {
         text-decoration: none;
         color: $white;
-        &__name {
+        .group-list__name {
           height: 23px;
           font-size: 15px;
           line-height: 23px;
           margin-bottom: 5px;
         }
-        &__text {
+        .group-list__text {
           height: 17px;
           font-size: 11px;
           line-height: 17px;
@@ -98,11 +102,15 @@ $white: #fff;
         line-height: 18px;
         display: flex;
         justify-content: flex-start;
+        &__li{
+          padding-right: 5px;
+        }
       }
     }
     a {
       text-decoration: none;
       .edit-btn{
+        padding: 0px 20px;
         height: 40px;
         width: 72px;
         text-align: center;
@@ -119,12 +127,13 @@ $white: #fff;
     height: calc(100vh - 100px - 90px);
     background-color: #fafafa;
     padding: 46px 40px;
+    overflow: auto;
     .message {
       padding-bottom: 40px;
-      &__upper-info {
+      .upper-message {
         display: flex;
         margin-bottom: 10px;
-        &__talker {
+        &__user-name {
           font-size: 16px;
           font-weight: bold;
           color: #333;
@@ -136,19 +145,25 @@ $white: #fff;
           margin-left: 10px;
         }
       }
-      .message__text {
-        height: 21px;
-        font-size: 14px;
-        color: #434A54;
-        margin-bottom: 10px;
+      .lower-message {
+        &__content {
+          height: 21px;
+          font-size: 14px;
+          color: #434A54;
+          margin-bottom: 10px;
+        }
+        &__image {
+          box-sizing:border-box;
+        }
       }
     }
   }
+
   &__message-form {
     height: 90px;
     background-color: #ddd;
     padding: 20px 40px;
-    .new-message {
+    .new-message form {
       display: flex;
       .input-box {
         width: 100%;
@@ -168,7 +183,6 @@ $white: #fff;
           position: absolute;
           right: 10px;
           top: 10px;
-          background-color: $white;
           i {
             font-size: 25px;
             line-height: 30px;
@@ -179,7 +193,7 @@ $white: #fff;
         }
       }
       .submit-btn {
-        display: none inline-block;
+        display: inline-block;
         height: 50px;
         width: 100px;
         background-color: #38aef0;
